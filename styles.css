@@ -1,1 +1,88 @@
-/*  your css code here. If applicable */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.progress-container::before {
+  content: '';
+  background: #d3d3d3;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress {
+  background: #4caf50;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  transform: translateY(-50%);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.circle {
+  background: #fff;
+  border: 3px solid #d3d3d3;
+  color: #999;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.circle.active {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  transition: background 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #45a049;
+}
